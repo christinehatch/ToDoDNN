@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classic WebForms", "Classic WebForms", "{56ADD2EF-FCE5-4838-A4A7-567A004EA493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoDNN.ClassicWebForms", "src\ToDoDNN.ClassicWebForms\ToDoDNN.ClassicWebForms.csproj", "{3C3CB462-EF8C-4663-BA5B-CF30D1314598}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{7677EA10-76AA-4B9A-A186-E20C3E67DDC2}"
+	ProjectSection(SolutionItems) = preProject
+		build\Module.build = build\Module.build
+		build\Package.Targets = build\Package.Targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42B53596-72F4-4DEF-B4DE-756B29D2B793}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C3CB462-EF8C-4663-BA5B-CF30D1314598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3CB462-EF8C-4663-BA5B-CF30D1314598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3CB462-EF8C-4663-BA5B-CF30D1314598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3CB462-EF8C-4663-BA5B-CF30D1314598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C3CB462-EF8C-4663-BA5B-CF30D1314598} = {56ADD2EF-FCE5-4838-A4A7-567A004EA493}
+	EndGlobalSection
+EndGlobal

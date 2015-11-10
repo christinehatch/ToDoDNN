@@ -1,0 +1,91 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="ToDoDNN.ClassicWebForms" type="Module" version="01.00.00">
+      <friendlyName>Classic WebForms ToDos</friendlyName>
+      <description/>
+      <owner>
+        <name>Charles Nurse</name>
+        <organization>Charles Nurse</organization>
+        <url>http://www.charlesnurse.com</url>
+        <email></email>
+      </owner>
+      <license src="license.txt" />
+      <releaseNotes src="releaseNotes.txt" />
+      <components>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>ToDoDNN.ClassicWebForms</moduleName>
+            <foldername>ToDoDNN/ClassicWebForms</foldername>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Classic Webforms ToDos</friendlyName>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/ToDoDNN/ClassicWebForms/ViewToDos.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>DesktopModules/ToDoDNN/ClassicWebForms/EditToDo.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <supportsPopUps>true</supportsPopUps>
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>DesktopModules/ToDoDNN/ClassicWebForms/Settings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <supportsPopUps>true</supportsPopUps>
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\ToDoDNN\ClassicWebForms</basePath>
+            <script type="Install">
+              <name>Install.sql</name>
+              <path>Data</path>
+              <version>01.00.00</version>
+            </script>
+            <script type="UnInstall">
+              <name>UnInstall.sql</name>
+              <path>Data</path>
+              <version>01.00.00</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>ToDoDNN.ClassicWebForms.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules\ToDoDNN\ClassicWebForms</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
