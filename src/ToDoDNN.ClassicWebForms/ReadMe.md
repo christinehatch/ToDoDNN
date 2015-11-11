@@ -3,5 +3,5 @@ This project is designed to showcase Best Practices for building DNN modules usi
 
 ## For more information
 
-[ToDo DNN Classic WebForm Blog](http://www.charlesnurse.com/Blog/Post/1584/ToDo-DNN-2-Classic-WebForms)
-[ToDo DNN Introductory Blog](http://www.charlesnurse.com/Blog/Post/1583/ToDo-DNN-1-Introduction)
+* [ToDo DNN Classic WebForm Blog](http://www.charlesnurse.com/Blog/Post/1584/ToDo-DNN-2-Classic-WebForms)
+* [ToDo DNN Introductory Blog](http://www.charlesnurse.com/Blog/Post/1583/ToDo-DNN-1-Introduction)
