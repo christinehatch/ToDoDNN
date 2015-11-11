@@ -14,7 +14,9 @@ namespace ToDoDNN.ClassicWebForms
 
             var settings = new ToDoSettings(ModuleConfiguration);
             softDeleteTodos.Checked = settings.SoftDeleteToDos;
-            ownerTypeList.SelectedIndex = (settings.OwnerType == OwnerType.Module) ? 0 : 1;
+            ownerTypeList.SelectedIndex = (settings.OwnerType == OwnerType.Module) 
+                                                ? 0 
+                                                : 1;
         }
 
         public override void UpdateSettings()
@@ -22,7 +24,9 @@ namespace ToDoDNN.ClassicWebForms
             var settings = new ToDoSettings(ModuleConfiguration)
                                 {
                                     SoftDeleteToDos = softDeleteTodos.Checked,
-                                    OwnerType = (ownerTypeList.SelectedIndex == 0) ? OwnerType.Module : OwnerType.User
+                                    OwnerType = (ownerTypeList.SelectedIndex == 0) 
+                                                ? OwnerType.Module 
+                                                : OwnerType.User
                                 };
             settings.Save();
         }

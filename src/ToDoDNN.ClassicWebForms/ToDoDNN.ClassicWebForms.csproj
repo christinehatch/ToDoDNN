@@ -122,7 +122,9 @@
   <ItemGroup>
     <Content Include="App_LocalResources\EditToDo.ascx.resx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\Settings.ascx.resx" />
   </ItemGroup>

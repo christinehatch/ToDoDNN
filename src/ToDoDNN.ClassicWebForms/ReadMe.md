@@ -1,4 +1,4 @@
-﻿# Classic WebForm
+﻿# Classic WebForms
 This project is designed to showcase Best Practices for building DNN modules using the Classic WebForms style to build a To-Do or Taks List module.
 
 ## For more information

@@ -6,35 +6,35 @@
 /*****************/
 
 IF NOT EXISTS (SELECT * FROM sys.objects 
-		WHERE object_id = OBJECT_ID(N'[dbo].[dnn_ToDoDnn_ToDos]') 
+		WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_ToDos]') 
 		AND type in (N'U'))
 	BEGIN
-		CREATE TABLE [dbo].[dnn_ToDoDnn_ToDos]
+		CREATE TABLE {databaseOwner}[{objectQualifier}ToDoDNN_ToDos]
 		(
 			[ToDoID]		INT				NOT NULL PRIMARY KEY IDENTITY, 
 			[OwnerID]		INT             NOT NULL,	
 			[Name]			NVARCHAR(100)	NOT NULL, 
 			[Description]	NVARCHAR(2000)	NULL, 
-			[IsComplete]	BIT				NOT NULL CONSTRAINT [DF_dnn_ToDoDnn_ToDos_IsComplete] DEFAULT 0, 
-			[IsDeleted]		BIT				NOT NULL CONSTRAINT [DF_dnn_ToDoDnn_ToDos_IsDeleted] DEFAULT 0, 
-			[CreatedOnDate]	DATETIME		NOT NULL CONSTRAINT [DF_dnn_ToDoDnn_ToDos_DateCreated] DEFAULT getdate()
+			[IsComplete]	BIT				NOT NULL CONSTRAINT [DF_{objectQualifier}ToDoDNN_ToDos_IsComplete] DEFAULT 0, 
+			[IsDeleted]		BIT				NOT NULL CONSTRAINT [DF_{objectQualifier}ToDoDNN_ToDos_IsDeleted] DEFAULT 0, 
+			[CreatedOnDate]	DATETIME		NOT NULL CONSTRAINT [DF_{objectQualifier}ToDoDNN_ToDos_DateCreated] DEFAULT getdate()
 		)
 	END
 
 /*  AddToDo  */
 /*************/
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'dbo.[dnn_ToDoDnn_AddToDo]') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.dnn_ToDoDnn_AddToDo
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_AddToDo]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_AddToDo
 GO
 
-CREATE PROCEDURE dbo.dnn_ToDoDnn_AddToDo
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_AddToDo
 	@OwnerID			int,
 	@Name				NVARCHAR(100),
 	@Description		nvarchar(2000),
 	@IsComplete 		bit
 AS
-	INSERT INTO dbo.dnn_ToDoDnn_ToDos (
+	INSERT INTO {databaseOwner}{objectQualifier}ToDoDNN_ToDos (
 	  OwnerID,
 	  Name,
 	  Description,
@@ -52,28 +52,28 @@ GO
 /*  DeleteToDo  */
 /****************/
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'dbo.[dnn_ToDoDnn_DeleteToDo]') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.dnn_ToDoDnn_DeleteToDo
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_DeleteToDo]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_DeleteToDo
 GO
 
-CREATE PROCEDURE dbo.dnn_ToDoDnn_DeleteToDo
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_DeleteToDo
 	@ToDoID		int
 AS
-	DELETE FROM dbo.dnn_ToDoDnn_ToDos
+	DELETE FROM {databaseOwner}{objectQualifier}ToDoDNN_ToDos
 	WHERE ToDoID = @ToDoID
 GO
 
 /*  GetToDo  */
 /**************/
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}GetToDo]') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.dnn_ToDoDnn_GetToDo
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_GetToDo]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_GetToDo
 GO
 
-CREATE PROCEDURE dbo.dnn_ToDoDnn_GetToDo
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_GetToDo
 	@ToDoID		int
 AS
-	SELECT * FROM dbo.dnn_ToDoDnn_ToDos
+	SELECT * FROM {databaseOwner}{objectQualifier}ToDoDNN_ToDos
 	WHERE ToDoID = @ToDoID
 
 GO
@@ -81,14 +81,14 @@ GO
 /*  GetToDos  */
 /**************/
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}GetToDos]') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.dnn_ToDoDnn_GetToDos
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_GetToDos]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_GetToDos
 GO
 
-CREATE PROCEDURE dbo.dnn_ToDoDnn_GetToDos
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_GetToDos
 	@OwnerID	int
 AS
-	SELECT * FROM dbo.dnn_ToDoDnn_ToDos
+	SELECT * FROM {databaseOwner}{objectQualifier}ToDoDNN_ToDos
 	WHERE OwnerID = @OwnerID OR @OwnerID IS NULL
 
 GO
@@ -96,18 +96,18 @@ GO
 /*  UpdateToDo  */
 /****************/
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}UpdateToDo]') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.dnn_ToDoDnn_UpdateToDo
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}ToDoDNN_UpdateToDo]') AND type in (N'P', N'PC'))
+	DROP PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_UpdateToDo
 GO
 
-CREATE PROCEDURE dbo.dnn_ToDoDnn_UpdateToDo
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ToDoDNN_UpdateToDo
 	@ToDoID				int,
 	@Name				NVARCHAR(100),
 	@Description		nvarchar(2000),
 	@IsComplete 		bit,
 	@IsDeleted 			bit
 AS
-	UPDATE dbo.dnn_ToDoDnn_ToDos
+	UPDATE {databaseOwner}{objectQualifier}ToDoDNN_ToDos
 		SET 
 			Name = @Name,
 			Description = @Description,

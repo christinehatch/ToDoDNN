@@ -73,7 +73,7 @@ namespace ToDoDNN.ClassicWebForms
             }
         }
 
-        void toDos_ItemCommand(object source, DataGridCommandEventArgs e)
+        private void toDos_ItemCommand(object source, DataGridCommandEventArgs e)
         {
             var controller = new ToDoController();
             var toDo = controller.GetToDos(_ownerId).ToList()[e.Item.ItemIndex];
@@ -109,7 +109,7 @@ namespace ToDoDNN.ClassicWebForms
             }
         }
 
-        void toDos_ItemDataBound(object sender, DataGridItemEventArgs e)
+        private void toDos_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
             {
@@ -143,6 +143,5 @@ namespace ToDoDNN.ClassicWebForms
                 }
             }
         }
-
     }
 }

@@ -11,27 +11,27 @@ namespace ToDoDNN.ClassicWebForms.Components
     {
         public int AddToDo(ToDo toDo)
         {
-            return DataProvider.Instance().ExecuteScalar<int>("ToDoDnn_AddToDo", toDo.OwnerId, toDo.Name, toDo.Description, toDo.IsComplete);
+            return DataProvider.Instance().ExecuteScalar<int>("ToDoDNN_AddToDo", toDo.OwnerId, toDo.Name, toDo.Description, toDo.IsComplete);
         }
 
         public void DeleteToDo(ToDo toDo)
         {
-            DataProvider.Instance().ExecuteNonQuery("ToDoDnn_DeleteToDo", toDo.ToDoId);
+            DataProvider.Instance().ExecuteNonQuery("ToDoDNN_DeleteToDo", toDo.ToDoId);
         }
 
         public ToDo GetToDo(int taskId)
         {
-            return CBO.FillObject<ToDo>(DataProvider.Instance().ExecuteReader("ToDoDnn_GetToDo", taskId));
+            return CBO.FillObject<ToDo>(DataProvider.Instance().ExecuteReader("ToDoDNN_GetToDo", taskId));
         }
 
         public IEnumerable<ToDo> GetToDos(int ownerId)
         {
-            return CBO.FillCollection<ToDo>(DataProvider.Instance().ExecuteReader("ToDoDnn_GetToDos", ownerId));
+            return CBO.FillCollection<ToDo>(DataProvider.Instance().ExecuteReader("ToDoDNN_GetToDos", ownerId));
         }
 
         public void UpdateToDo(ToDo toDo)
         {
-            DataProvider.Instance().ExecuteNonQuery("ToDoDnn_UpdateToDo", toDo.ToDoId, toDo.Name, toDo.Description, toDo.IsComplete, toDo.IsDeleted);
+            DataProvider.Instance().ExecuteNonQuery("ToDoDNN_UpdateToDo", toDo.ToDoId, toDo.Name, toDo.Description, toDo.IsComplete, toDo.IsDeleted);
         }
     }
 }

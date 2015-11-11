@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EditToDo.ascx.cs" Inherits="ToDoDNN.ClassicWebForms.EditToDo" %>
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/LabelControl.ascx" %>
 
-<div class="dnnForm dnnEditToDo dnnClear" id="dnnEditToDo">
+<div class="dnnForm dnnClear" id="toDoDNN_EditToDo">
 	<fieldset>
 		<div class="dnnFormItem">
 			<dnn:label id="toDoNameLabel" runat="server" controlname="toDoName"/>

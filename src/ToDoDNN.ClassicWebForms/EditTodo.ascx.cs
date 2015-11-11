@@ -43,7 +43,7 @@ namespace ToDoDNN.ClassicWebForms
             cancel.NavigateUrl = Globals.NavigateURL();
         }
 
-        void saveToDo_Click(object sender, EventArgs e)
+        private void saveToDo_Click(object sender, EventArgs e)
         {
             var controller = new ToDoController();
             var toDo = new ToDo
